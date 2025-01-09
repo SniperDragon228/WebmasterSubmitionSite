@@ -1,0 +1,224 @@
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sustainable Eats</title>
+        <style>
+            body { 
+                font-family: Arial, sans-serif; 
+                margin: 0; 
+                padding: 0; 
+                color: #333; 
+                text-align: center; 
+            }
+
+            header { 
+                background: #4CAF50; 
+                color: white; 
+                padding: 1em; 
+            }
+            header h1 {
+                font-size: 3em; 
+                margin: 0.5em 0;
+                line-height: 1.2;
+            }
+            header h2 {
+                font-size: em; 
+                margin: 0.5em 0;
+                line-height: 1.2;
+            }
+            header p {
+                font-size: 1.2em; 
+                margin: 0;
+            }
+
+            nav { 
+                background: #333; 
+                padding: 0.5em 0; 
+            }
+            nav a { 
+                color: white; 
+                text-decoration: none; 
+                margin: 0 1em; 
+            }
+            .section { 
+                padding: 2em; 
+            }
+            .motto {
+                margin: 2em auto;
+                padding: 1.5em;
+                border: 2px solid #4CAF50;
+                border-radius: 8px;
+                background-color: #f9fff9;
+                max-width: 600px;
+                font-size: 1.5em;
+                font-weight: bold;
+                color: #4CAF50;
+            }
+            .menu-container {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                gap: 2em;
+                justify-items: center;
+                margin: 0 auto;
+                max-width: 1200px;
+            }
+            .menu-item { 
+                display: flex; 
+                flex-direction: column; 
+                align-items: center; 
+                text-align: center; 
+            }
+            .menu-item img { 
+                width: 200px; 
+                height: 200px; 
+                object-fit: cover; 
+                border-radius: 8px; 
+                margin-bottom: -5px; /* Makes the button appear attached */
+            }
+            .button { 
+                background: #4CAF50; 
+                color: white; 
+                padding: 0.5em 1em; 
+                font-size: 1em; 
+                border: none; 
+                cursor: pointer; 
+                margin: 0; /* Removes margin to attach to the image */
+                border-radius: 0 0 8px 8px; /* Matches image corners for a cohesive look */
+            }
+            .button:hover { 
+                background: #45a049; 
+            }
+            .dish-details { 
+                display: none; 
+                text-align: center; 
+                margin-top: 10px; 
+            }
+            footer { 
+                background: #333; 
+                color: white; 
+                padding: 1em; 
+                margin-top: 2em; 
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Urban Oasis</h1>
+            <p>Delicious food, responsibly sourced.</p>
+        </header>
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#menu">Menu</a>
+            <a href="#sustainability">Sustainability</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="motto">
+            <h2>So Fresh, Local and Sustainable, that you could call it an Oasis.</h2>
+        </div>
+    
+        <div id="menu" class="section">
+            <h2>Our Menu</h2>
+            <div class="menu-container">
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Butter Chicken">
+                    <button class="button" onclick="toggleDetails(0)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-0">
+                        <h3>Butter Chicken</h3>
+                        <p>Organic chicken, sustainably grown tomatoes, grass-fed cream, fresh spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Palak Paneer">
+                    <button class="button" onclick="toggleDetails(1)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-1">
+                        <h3>Palak Paneer</h3>
+                        <p>Locally sourced spinach, organic paneer, fresh garlic, eco-friendly oil.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Biryani">
+                    <button class="button" onclick="toggleDetails(2)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-2">
+                        <h3>Vegetable Biryani</h3>
+                        <p>Sustainable basmati rice, organic vegetables, locally sourced spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Masala Dosa">
+                    <button class="button" onclick="toggleDetails(3)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-3">
+                        <h3>Masala Dosa</h3>
+                        <p>Organic rice, lentils, farm-fresh potatoes, sustainable spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Samosa">
+                    <button class="button" onclick="toggleDetails(4)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-4">
+                        <h3>Samosa</h3>
+                        <p>Organic wheat flour, locally grown potatoes, eco-friendly spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Tandoori Chicken">
+                    <button class="button" onclick="toggleDetails(5)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-5">
+                        <h3>Tandoori Chicken</h3>
+                        <p>Free-range chicken, organic yogurt, handpicked spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Dal Tadka">
+                    <button class="button" onclick="toggleDetails(6)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-6">
+                        <h3>Dal Tadka</h3>
+                        <p>Organic lentils, locally grown tomatoes, fresh herbs, sustainable ghee.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Chole Bhature">
+                    <button class="button" onclick="toggleDetails(7)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-7">
+                        <h3>Chole Bhature</h3>
+                        <p>Organic chickpeas, whole wheat, farm-fresh spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Rogan Josh">
+                    <button class="button" onclick="toggleDetails(8)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-8">
+                        <h3>Rogan Josh</h3>
+                        <p>Free-range lamb, sustainably grown onions, eco-friendly spices.</p>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img src="https://via.placeholder.com/300" alt="Gulab Jamun">
+                    <button class="button" onclick="toggleDetails(9)">Reveal Ingredients</button>
+                    <div class="dish-details" id="details-9">
+                        <h3>Gulab Jamun</h3>
+                        <p>Organic milk solids, fair-trade sugar, sustainably sourced rose water.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 Urban Oasis. All rights reserved.</p>
+        </footer>
+
+        <script>
+            function toggleDetails(index) {
+                const details = document.getElementById(`details-${index}`);
+                const button = details.previousElementSibling;
+
+                if (details.style.display === 'none' || details.style.display === '') {
+                    details.style.display = 'block';
+                    button.textContent = 'Hide Ingredients';
+                } else {
+                    details.style.display = 'none';
+                    button.textContent = 'Reveal Ingredients';
+                }
+            }
+        </script>
+    </body>
+    </html>
